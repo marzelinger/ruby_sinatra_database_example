@@ -1,0 +1,17 @@
+<h2>All Posts</h2>
+<ul>
+<% @posts.each do |post| %>
+ <li>
+   <a href="/post/<%= post.id %>"><%= post.title %></a> | <%= post.created_at %>
+ </li>
+ <!--generates a unique url request link for each post in the form of /post/idnumber, will handle in the app.r-->
+<% end %>
+</ul>
+<h2>Add Post</h2>
+<form method="post" action="/post">
+		<label for="title">Title: </label>
+   <input type="text" name="title">
+   <label for="body">Body: </label>
+   <input type="text" name="body">
+   <input type ="submit" value="Add Post">
+</form>
